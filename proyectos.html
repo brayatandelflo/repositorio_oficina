@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos - NP Creative</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css.min.css" integrity="sha512-siQlkepa6lqnSzravyHZjNZiA2/QpkC91LEEQlinbjDJ4I2+8PsrshZP+v7gnijvZtg+GstL3P1UeNr7kBLyTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilos específicos para página de proyectos */
@@ -182,67 +181,6 @@
         .service-card:hover {
             transform: translateY(-15px);
             box-shadow: 0 30px 60px rgba(0, 255, 136, 0.2);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: inline-block;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 255, 136, 0.1);
-            border: 2px solid #00ff88;
-            margin-bottom: 30px;
-            color: #00ff88;
-        }
-
-        .service-icon i {
-            font-size: 2.5rem;
-        }
-
-        .service-card:nth-child(2) .service-icon {
-            background: rgba(0, 212, 255, 0.1);
-            border-color: #00d4ff;
-            color: #00d4ff;
-        }
-
-        .service-card:nth-child(3) .service-icon {
-            background: rgba(255, 0, 255, 0.1);
-            border-color: #ff00ff;
-            color: #ff00ff;
-        }
-
-        .service-card:nth-child(4) .service-icon {
-            background: rgba(0, 255, 136, 0.1);
-            border-color: #00ff88;
-            color: #00ff88;
-        }
-
-        .service-card:nth-child(5) .service-icon {
-            background: rgba(0, 212, 255, 0.1);
-            border-color: #00d4ff;
-            color: #00d4ff;
-        }
-
-        .service-card:nth-child(6) .service-icon {
-            background: rgba(255, 0, 255, 0.1);
-            border-color: #ff00ff;
-            color: #ff00ff;
-        }
-
-        .service-card:nth-child(7) .service-icon {
-            background: rgba(0, 255, 136, 0.1);
-            border-color: #00ff88;
-            color: #00ff88;
-        }
-
-        .service-card:nth-child(8) .service-icon {
-            background: rgba(0, 212, 255, 0.1);
-            border-color: #00d4ff;
-            color: #00d4ff;
         }
 
         .service-card h3 {
@@ -586,56 +524,48 @@
         <div class="services-grid">
             <!-- Análisis de Datos -->
             <div class="service-card" onclick="openServiceModal('Análisis de Datos', 'Análisis profundo de datos empresariales para extraer insights valiosos, identificar patrones y tendencias. Transformamos datos en información accionable para la toma de decisiones estratégica y mejora continua del negocio.', ['Dashboard Analíticos Personalizados', 'Reportes Dinámicos y Visualización', 'Predicción de Tendencias', 'Business Intelligence Avanzado', 'Optimización de Procesos Basado en Datos'])">
-                <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
                 <h3>Análisis de Datos</h3>
                 <p class="service-description">Análisis profundo de datos empresariales para insights estratégicos y toma de decisiones.</p>
             </div>
 
             <!-- Gestión de Base de Datos -->
             <div class="service-card" onclick="openServiceModal('Gestión de Base de Datos', 'Diseño, implementación y administración de bases de datos robustas, seguras y escalables. Optimizamos el rendimiento, garantizamos integridad de datos y aseguramos disponibilidad continua de tu información crítica.', ['Diseño de Esquemas Optimizados', 'Administración y Mantenimiento', 'Backup y Recuperación de Datos', 'Optimización de Consultas', 'Seguridad y Encriptación'])">
-                <div class="service-icon"><i class="fas fa-database"></i></div>
                 <h3>Gestión BD</h3>
                 <p class="service-description">Diseño, administración y optimización de bases de datos seguras y escalables.</p>
             </div>
 
             <!-- Asesorías de Software -->
             <div class="service-card" onclick="openServiceModal('Asesorías de Software', 'Asesoría especializada en arquitectura de software, mejores prácticas de desarrollo, tecnologías emergentes y estrategias de transformación digital. Potenciamos tus capacidades técnicas y optimizamos tus procesos de desarrollo.', ['Auditoría de Código', 'Arquitectura de Software', 'Mejores Prácticas Dev', 'Selección de Tecnologías', 'Code Review y Mentoring'])">
-                <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
                 <h3>Asesorías Software</h3>
                 <p class="service-description">Asesoría en arquitectura, prácticas y tecnologías de desarrollo de software.</p>
             </div>
 
             <!-- Asesorías de Hardware -->
             <div class="service-card" onclick="openServiceModal('Asesorías de Hardware', 'Evaluación, selección e implementación de soluciones de hardware adaptadas a tus necesidades. Desde infraestructura de servidor hasta estaciones de trabajo, garantizamos rendimiento y rentabilidad óptima.', ['Evaluación de Infraestructura', 'Selección de Equipamiento', 'Planificación de Capacidad', 'Instalación y Configuración', 'Soporte Técnico de Hardware'])">
-                <div class="service-icon"><i class="fas fa-server"></i></div>
                 <h3>Asesorías Hardware</h3>
                 <p class="service-description">Evaluación y selección de soluciones de hardware optimizadas para tu negocio.</p>
             </div>
 
             <!-- Desarrollo Web -->
             <div class="service-card" onclick="openServiceModal('Desarrollo Web', 'Creación de sitios web y aplicaciones web modernas, responsive y orientadas a conversión. Implementamos las últimas tecnologías y mejores prácticas para resultados excepcionales.', ['Sitios Web Responsive', 'Aplicaciones Web Progresivas', 'E-commerce Funcionales', 'Optimización SEO', 'Integración de APIs'])">
-                <div class="service-icon"><i class="fas fa-globe"></i></div>
                 <h3>Desarrollo Web</h3>
                 <p class="service-description">Creación de sitios web y aplicaciones modernas, responsive y orientadas a conversión.</p>
             </div>
 
             <!-- Diseño Gráfico -->
             <div class="service-card" onclick="openServiceModal('Diseño Gráfico', 'Diseño visual profesional y creativo para marca, web e impresión. Creamos identidades corporativas únicas que comunican tus valores y atrapan la atención de tu audiencia.', ['Identidad Corporativa', 'Diseño de Logo Único', 'Diseño Web UI/UX', 'Materiales Impresos', 'Branding Estratégico'])">
-                <div class="service-icon"><i class="fas fa-palette"></i></div>
                 <h3>Diseño Gráfico</h3>
                 <p class="service-description">Diseño visual profesional para marca, web e impresión con identidad corporativa única.</p>
             </div>
 
             <!-- Consultoría Digital -->
             <div class="service-card" onclick="openServiceModal('Consultoría Digital', 'Asesoría especializada para transformación digital y estrategia tecnológica empresarial. Te guiamos en el camino hacia la modernización, productividad y competitividad en el entorno digital.', ['Auditoría Tecnológica', 'Estrategia Digital', 'Selección de Herramientas', 'Implementación Integral', 'Capacitación de Equipos'])">
-                <div class="service-icon"><i class="fas fa-rocket"></i></div>
                 <h3>Consultoría Digital</h3>
                 <p class="service-description">Asesoría para transformación digital y estrategia tecnológica empresarial.</p>
             </div>
 
             <!-- Mantenimiento -->
             <div class="service-card" onclick="openServiceModal('Mantenimiento', 'Soporte continuo y mantenimiento preventivo para tu plataforma digital y sistemas. Monitoreamos 24/7 para garantizar máxima disponibilidad, seguridad y rendimiento.', ['Monitoreo 24/7', 'Actualizaciones Regulares', 'Backup Automático', 'Soporte Técnico', 'Parches de Seguridad'])">
-                <div class="service-icon"><i class="fas fa-tools"></i></div>
                 <h3>Mantenimiento</h3>
                 <p class="service-description">Soporte continuo y mantenimiento preventivo para plataforma digital y sistemas.</p>
             </div>
