@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - NP Creative</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para página de proyectos */
+        .projects-hero {
+            background: linear-gradient(135deg, #0f0f0f 0%, #16213e 100%);
+            padding: 150px 40px 100px;
+            text-align: center;
+            border-bottom: 3px solid #00ff88;
+        }
+
+        .projects-hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .projects-hero h1 span {
+            background: linear-gradient(45deg, #00ff88, #00d4ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .projects-hero p {
+            font-size: 1.3rem;
+            color: #a0a0a0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Grid de Proyectos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 80px 40px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 2px solid #00ff88;
+            padding: 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-card:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 20px 60px rgba(0, 255, 136, 0.3);
+            transform: translateY(-10px);
+        }
+
+        .project-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #00ff88;
+            opacity: 0.2;
+            margin-bottom: -10px;
+        }
+
+        .project-card h3 {
+            color: #00ff88;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-card p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-tag {
+            background: #ff00ff;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 0;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Sección de Servicios */
+        .services-section {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+            padding: 100px 40px;
+            border-top: 3px solid #00d4ff;
+        }
+
+        .services-section h2 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 80px;
+            color: white;
+        }
+
+        .services-section h2 span {
+            background: linear-gradient(45deg, #ff00ff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-left: 4px solid #00ff88;
+            padding: 50px 40px;
+            transition: all 0.3s;
+        }
+
+        .service-card:nth-child(2) {
+            border-left-color: #00d4ff;
+        }
+
+        .service-card:nth-child(3) {
+            border-left-color: #ff00ff;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 255, 136, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 255, 136, 0.1);
+            border: 2px solid #00ff88;
+            margin-bottom: 30px;
+        }
+
+        .service-card:nth-child(2) .service-icon {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: #00d4ff;
+        }
+
+        .service-card:nth-child(3) .service-icon {
+            background: rgba(255, 0, 255, 0.1);
+            border-color: #ff00ff;
+        }
+
+        .service-card h3 {
+            color: #00ff88;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-card:nth-child(2) h3 {
+            color: #00d4ff;
+        }
+
+        .service-card:nth-child(3) h3 {
+            color: #ff00ff;
+        }
+
+        .service-description {
+            color: #b0b0b0;
+            line-height: 1.9;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .service-features li {
+            color: #a0a0a0;
+            padding: 10px 0;
+            border-bottom: 1px solid #2a2a4e;
+            font-size: 0.95rem;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-cta {
+            display: inline-block;
+            background: #00ff88;
+            color: #0f0f0f;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .service-card:nth-child(2) .service-cta {
+            background: #00d4ff;
+        }
+
+        .service-card:nth-child(3) .service-cta {
+            background: #ff00ff;
+        }
+
+        .service-cta:hover {
+            transform: scale(1.05);
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .projects-hero {
+                padding: 100px 20px 60px;
+            }
+
+            .projects-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                padding: 60px 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .services-section {
+                padding: 60px 20px;
+            }
+
+            .services-section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Minimalista -->
+    <header>
+        <div class="logo">NP.</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section Proyectos -->
+    <section class="projects-hero">
+        <h1>Portfolio <span>Exclusivo</span></h1>
+        <p>Casos de éxito y proyectos realizados con excelencia en tecnología e innovación</p>
+    </section>
+
+    <!-- Grid de Proyectos -->
+    <section class="ideas-section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Proyectos <span>Destacados</span></h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-number">01</div>
+                    <h3>Automatización con IA</h3>
+                    <p>Sistema inteligente para automatizar procesos empresariales utilizando inteligencia artificial y machine learning.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">API REST</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-number">02</div>
+                    <h3>Proyectos Sociales</h3>
+                    <p>Plataforma digital para conectar emprendedores sociales con donantes y patrocinadores interesados en impacto social.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-number">03</div>
+                    <h3>Soluciones Locales</h3>
+                    <p>E-commerce para pequeños comercios locales con integración de pagos y gestión de inventario en tiempo real.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Stripe</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-number">04</div>
+                    <h3>Análisis de Datos</h3>
+                    <p>Dashboard analítico avanzado para visualizar y analizar grandes volúmenes de datos empresariales con interactividad.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Chart.js</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-number">05</div>
+                    <h3>Desarrollo Web Avanzado</h3>
+                    <p>Aplicación web progresiva con arquitectura moderna, responsive design y optimización de rendimiento máximo.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">Webpack</span>
+                        <span class="tech-tag">PWA</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-number">06</div>
+                    <h3>Capacitación Digital</h3>
+                    <p>Plataforma educativa completa con cursos interactivos, evaluaciones y certificaciones para formación profesional.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">WebGL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios Detallada -->
+    <section class="services-section" id="services">
+        <h2>Servicios <span>Especializados</span></h2>
+        
+        <div class="services-grid">
+            <!-- Desarrollo Web -->
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Desarrollo Web</h3>
+                <p class="service-description">Creación de sitios web y aplicaciones web modernas, responsive y orientadas a conversión.</p>
+                <ul class="service-features">
+                    <li>✓ Sitios Web Responsive</li>
+                    <li>✓ Aplicaciones Web Progresivas (PWA)</li>
+                    <li>✓ E-commerce Funcionales</li>
+                    <li>✓ Optimización SEO</li>
+                    <li>✓ Integración de APIs</li>
+                </ul>
+                <a href="contacto.html" class="service-cta">Solicitar Presupuesto</a>
+            </div>
+
+            <!-- Diseño Gráfico -->
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Diseño Gráfico</h3>
+                <p class="service-description">Diseño visual profesional para marca, web e impresión con identidad corporativa única.</p>
+                <ul class="service-features">
+                    <li>✓ Identidad Corporativa</li>
+                    <li>✓ Diseño de Logo</li>
+                    <li>✓ Diseño Web UI/UX</li>
+                    <li>✓ Materiales Impreso</li>
+                    <li>✓ Branding Estratégico</li>
+                </ul>
+                <a href="contacto.html" class="service-cta">Solicitar Presupuesto</a>
+            </div>
+
+            <!-- Consultoría Digital -->
+            <div class="service-card">
+                <div class="service-icon">🚀</div>
+                <h3>Consultoría Digital</h3>
+                <p class="service-description">Asesoría especializada para transformación digital y estrategia tecnológica empresarial.</p>
+                <ul class="service-features">
+                    <li>✓ Auditoría Tecnológica</li>
+                    <li>✓ Estrategia Digital</li>
+                    <li>✓ Selección Herramientas</li>
+                    <li>✓ Implementación</li>
+                    <li>✓ Capacitación Equipos</li>
+                </ul>
+                <a href="contacto.html" class="service-cta">Solicitar Presupuesto</a>
+            </div>
+
+            <!-- Asesorías -->
+            <div class="service-card">
+                <div class="service-icon">👨‍💼</div>
+                <h3>Asesorías IT</h3>
+                <p class="service-description">Asesoría especializada en tecnología, seguridad digital y buenas prácticas en sistemas.</p>
+                <ul class="service-features">
+                    <li>✓ Seguridad Informática</li>
+                    <li>✓ Infraestructura IT</li>
+                    <li>✓ Soporte Técnico</li>
+                    <li>✓ Gestión de Proyectos</li>
+                    <li>✓ Optimización Datos</li>
+                </ul>
+                <a href="contacto.html" class="service-cta">Solicitar Presupuesto</a>
+            </div>
+
+            <!-- Mantenimiento -->
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Mantenimiento</h3>
+                <p class="service-description">Soporte continuo y mantenimiento preventivo para tu plataforma digital y sistemas.</p>
+                <ul class="service-features">
+                    <li>✓ Monitoreo 24/7</li>
+                    <li>✓ Actualizaciones</li>
+                    <li>✓ Backup Automático</li>
+                    <li>✓ Soporte Técnico</li>
+                    <li>✓ Parches Seguridad</li>
+                </ul>
+                <a href="contacto.html" class="service-cta">Solicitar Presupuesto</a>
+            </div>
+
+            <!-- Análisis de Datos -->
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Análisis de Datos</h3>
+                <p class="service-description">Análisis profundo de datos empresariales para insights estratégicos y toma de decisiones.</p>
+                <ul class="service-features">
+                    <li>✓ Dashboard Analíticos</li>
+                    <li>✓ Reportes Personalizados</li>
+                    <li>✓ Visualización Datos</li>
+                    <li>✓ Predicción Tendencias</li>
+                    <li>✓ Business Intelligence</li>
+                </ul>
+                <a href="contacto.html" class="service-cta">Solicitar Presupuesto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>¿Tu proyecto necesita experticia?</h2>
+        <p>Transformemos tu visión en realidad con tecnología de punta</p>
+        <a href="contacto.html" class="btn-primary" style="text-decoration: none; display: inline-block;">Iniciar Proyecto</a>
+    </section>
+
+    <!-- Footer Moderno -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <a href="index.html">Home</a>
+                <a href="proyectos.html">Proyectos</a>
+                <a href="index.html#features">Features</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <a href="tel:+56928555617">+56 9 2855 5617</a>
+                <a href="mailto:npardo@tricot.cl">npardo@tricot.cl</a>
+                <a href="https://cl.linkedin.com/in/nicolás-pardo-b39a513a5?trk=people-guest_people_search-card" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <a href="proyectos.html#services">Desarrollo Web</a>
+                <a href="proyectos.html#services">Diseño Gráfico</a>
+                <a href="proyectos.html#services">Consultoría</a>
+                <a href="proyectos.html#services">Mantenimiento</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NP Creative. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
