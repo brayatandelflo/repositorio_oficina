@@ -136,17 +136,18 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            max-width: 1400px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1600px;
             margin: 0 auto;
         }
 
         .service-card {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             border-left: 4px solid #00ff88;
-            padding: 50px 40px;
+            padding: 35px 30px;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .service-card:nth-child(2) {
@@ -155,6 +156,26 @@
 
         .service-card:nth-child(3) {
             border-left-color: #ff00ff;
+        }
+
+        .service-card:nth-child(4) {
+            border-left-color: #00ff88;
+        }
+
+        .service-card:nth-child(5) {
+            border-left-color: #00d4ff;
+        }
+
+        .service-card:nth-child(6) {
+            border-left-color: #ff00ff;
+        }
+
+        .service-card:nth-child(7) {
+            border-left-color: #00ff88;
+        }
+
+        .service-card:nth-child(8) {
+            border-left-color: #00d4ff;
         }
 
         .service-card:hover {
@@ -186,9 +207,34 @@
             border-color: #ff00ff;
         }
 
+        .service-card:nth-child(4) .service-icon {
+            background: rgba(0, 255, 136, 0.1);
+            border-color: #00ff88;
+        }
+
+        .service-card:nth-child(5) .service-icon {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: #00d4ff;
+        }
+
+        .service-card:nth-child(6) .service-icon {
+            background: rgba(255, 0, 255, 0.1);
+            border-color: #ff00ff;
+        }
+
+        .service-card:nth-child(7) .service-icon {
+            background: rgba(0, 255, 136, 0.1);
+            border-color: #00ff88;
+        }
+
+        .service-card:nth-child(8) .service-icon {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: #00d4ff;
+        }
+
         .service-card h3 {
             color: #00ff88;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -200,6 +246,26 @@
 
         .service-card:nth-child(3) h3 {
             color: #ff00ff;
+        }
+
+        .service-card:nth-child(4) h3 {
+            color: #00ff88;
+        }
+
+        .service-card:nth-child(5) h3 {
+            color: #00d4ff;
+        }
+
+        .service-card:nth-child(6) h3 {
+            color: #ff00ff;
+        }
+
+        .service-card:nth-child(7) h3 {
+            color: #00ff88;
+        }
+
+        .service-card:nth-child(8) h3 {
+            color: #00d4ff;
         }
 
         .service-description {
@@ -229,11 +295,14 @@
             display: inline-block;
             background: #00ff88;
             color: #0f0f0f;
-            padding: 12px 30px;
+            padding: 10px 20px;
             text-decoration: none;
             font-weight: 700;
             transition: all 0.3s;
             margin-top: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border: none;
         }
 
         .service-card:nth-child(2) .service-cta {
@@ -244,9 +313,122 @@
             background: #ff00ff;
         }
 
+        .service-card:nth-child(4) .service-cta {
+            background: #00ff88;
+        }
+
+        .service-card:nth-child(5) .service-cta {
+            background: #00d4ff;
+        }
+
+        .service-card:nth-child(6) .service-cta {
+            background: #ff00ff;
+        }
+
+        .service-card:nth-child(7) .service-cta {
+            background: #00ff88;
+        }
+
+        .service-card:nth-child(8) .service-cta {
+            background: #00d4ff;
+        }
+
         .service-cta:hover {
             transform: scale(1.05);
             letter-spacing: 1px;
+        }
+
+        /* Modal de Servicios */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            margin: auto;
+            padding: 50px;
+            border: 2px solid #00ff88;
+            border-radius: 0;
+            width: 90%;
+            max-width: 700px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translate(-50%, -55%);
+                opacity: 0;
+            }
+            to {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+
+        .close {
+            color: #00ff88;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #00d4ff;
+        }
+
+        .modal-content h2 {
+            color: #00ff88;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .modal-content p {
+            color: #b0b0b0;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .modal-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .modal-features li {
+            color: #a0a0a0;
+            padding: 12px 0;
+            border-bottom: 1px solid #2a2a4e;
+            font-size: 1rem;
+        }
+
+        .modal-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-card {
+            cursor: pointer;
         }
 
         /* Responsive */
@@ -265,8 +447,8 @@
             }
 
             .services-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
 
             .services-section {
@@ -378,95 +560,71 @@
     <section class="services-section" id="services">
         <h2>Servicios <span>Especializados</span></h2>
         
+        <!-- Modal para detalles del servicio -->
+        <div id="serviceModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeServiceModal()">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <p id="modalDescription"></p>
+                <ul class="modal-features" id="modalFeatures"></ul>
+            </div>
+        </div>
+        
         <div class="services-grid">
-            <!-- Desarrollo Web -->
-            <div class="service-card">
-                <div class="service-icon">💻</div>
-                <h3>Desarrollo Web</h3>
-                <p class="service-description">Creación de sitios web y aplicaciones web modernas, responsive y orientadas a conversión.</p>
-                <ul class="service-features">
-                    <li>✓ Sitios Web Responsive</li>
-                    <li>✓ Aplicaciones Web Progresivas (PWA)</li>
-                    <li>✓ E-commerce Funcionales</li>
-                    <li>✓ Optimización SEO</li>
-                    <li>✓ Integración de APIs</li>
-                </ul>
-                <a href="contacto.html" class="service-cta">Solicitar Presupuesto</a>
-            </div>
-
-            <!-- Diseño Gráfico -->
-            <div class="service-card">
-                <div class="service-icon">🎨</div>
-                <h3>Diseño Gráfico</h3>
-                <p class="service-description">Diseño visual profesional para marca, web e impresión con identidad corporativa única.</p>
-                <ul class="service-features">
-                    <li>✓ Identidad Corporativa</li>
-                    <li>✓ Diseño de Logo</li>
-                    <li>✓ Diseño Web UI/UX</li>
-                    <li>✓ Materiales Impreso</li>
-                    <li>✓ Branding Estratégico</li>
-                </ul>
-                <a href="contacto.html" class="service-cta">Solicitar Presupuesto</a>
-            </div>
-
-            <!-- Consultoría Digital -->
-            <div class="service-card">
-                <div class="service-icon">🚀</div>
-                <h3>Consultoría Digital</h3>
-                <p class="service-description">Asesoría especializada para transformación digital y estrategia tecnológica empresarial.</p>
-                <ul class="service-features">
-                    <li>✓ Auditoría Tecnológica</li>
-                    <li>✓ Estrategia Digital</li>
-                    <li>✓ Selección Herramientas</li>
-                    <li>✓ Implementación</li>
-                    <li>✓ Capacitación Equipos</li>
-                </ul>
-                <a href="contacto.html" class="service-cta">Solicitar Presupuesto</a>
-            </div>
-
-            <!-- Asesorías -->
-            <div class="service-card">
-                <div class="service-icon">👨‍💼</div>
-                <h3>Asesorías IT</h3>
-                <p class="service-description">Asesoría especializada en tecnología, seguridad digital y buenas prácticas en sistemas.</p>
-                <ul class="service-features">
-                    <li>✓ Seguridad Informática</li>
-                    <li>✓ Infraestructura IT</li>
-                    <li>✓ Soporte Técnico</li>
-                    <li>✓ Gestión de Proyectos</li>
-                    <li>✓ Optimización Datos</li>
-                </ul>
-                <a href="contacto.html" class="service-cta">Solicitar Presupuesto</a>
-            </div>
-
-            <!-- Mantenimiento -->
-            <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>Mantenimiento</h3>
-                <p class="service-description">Soporte continuo y mantenimiento preventivo para tu plataforma digital y sistemas.</p>
-                <ul class="service-features">
-                    <li>✓ Monitoreo 24/7</li>
-                    <li>✓ Actualizaciones</li>
-                    <li>✓ Backup Automático</li>
-                    <li>✓ Soporte Técnico</li>
-                    <li>✓ Parches Seguridad</li>
-                </ul>
-                <a href="contacto.html" class="service-cta">Solicitar Presupuesto</a>
-            </div>
-
             <!-- Análisis de Datos -->
-            <div class="service-card">
+            <div class="service-card" onclick="openServiceModal('Análisis de Datos', 'Análisis profundo de datos empresariales para extraer insights valiosos, identificar patrones y tendencias. Transformamos datos en información accionable para la toma de decisiones estratégica y mejora continua del negocio.', ['Dashboard Analíticos Personalizados', 'Reportes Dinámicos y Visualización', 'Predicción de Tendencias', 'Business Intelligence Avanzado', 'Optimización de Procesos Basado en Datos'])">
                 <div class="service-icon">📊</div>
                 <h3>Análisis de Datos</h3>
                 <p class="service-description">Análisis profundo de datos empresariales para insights estratégicos y toma de decisiones.</p>
-                <ul class="service-features">
-                    <li>✓ Dashboard Analíticos</li>
-                    <li>✓ Reportes Personalizados</li>
-                    <li>✓ Visualización Datos</li>
-                    <li>✓ Predicción Tendencias</li>
-                    <li>✓ Business Intelligence</li>
-                </ul>
-                <a href="contacto.html" class="service-cta">Solicitar Presupuesto</a>
+            </div>
+
+            <!-- Gestión de Base de Datos -->
+            <div class="service-card" onclick="openServiceModal('Gestión de Base de Datos', 'Diseño, implementación y administración de bases de datos robustas, seguras y escalables. Optimizamos el rendimiento, garantizamos integridad de datos y aseguramos disponibilidad continua de tu información crítica.', ['Diseño de Esquemas Optimizados', 'Administración y Mantenimiento', 'Backup y Recuperación de Datos', 'Optimización de Consultas', 'Seguridad y Encriptación'])">
+                <div class="service-icon">🗄️</div>
+                <h3>Gestión BD</h3>
+                <p class="service-description">Diseño, administración y optimización de bases de datos seguras y escalables.</p>
+            </div>
+
+            <!-- Asesorías de Software -->
+            <div class="service-card" onclick="openServiceModal('Asesorías de Software', 'Asesoría especializada en arquitectura de software, mejores prácticas de desarrollo, tecnologías emergentes y estrategias de transformación digital. Potenciamos tus capacidades técnicas y optimizamos tus procesos de desarrollo.', ['Auditoría de Código', 'Arquitectura de Software', 'Mejores Prácticas Dev', 'Selección de Tecnologías', 'Code Review y Mentoring'])">
+                <div class="service-icon">💾</div>
+                <h3>Asesorías Software</h3>
+                <p class="service-description">Asesoría en arquitectura, prácticas y tecnologías de desarrollo de software.</p>
+            </div>
+
+            <!-- Asesorías de Hardware -->
+            <div class="service-card" onclick="openServiceModal('Asesorías de Hardware', 'Evaluación, selección e implementación de soluciones de hardware adaptadas a tus necesidades. Desde infraestructura de servidor hasta estaciones de trabajo, garantizamos rendimiento y rentabilidad óptima.', ['Evaluación de Infraestructura', 'Selección de Equipamiento', 'Planificación de Capacidad', 'Instalación y Configuración', 'Soporte Técnico de Hardware'])">
+                <div class="service-icon">🖥️</div>
+                <h3>Asesorías Hardware</h3>
+                <p class="service-description">Evaluación y selección de soluciones de hardware optimizadas para tu negocio.</p>
+            </div>
+
+            <!-- Desarrollo Web -->
+            <div class="service-card" onclick="openServiceModal('Desarrollo Web', 'Creación de sitios web y aplicaciones web modernas, responsive y orientadas a conversión. Implementamos las últimas tecnologías y mejores prácticas para resultados excepcionales.', ['Sitios Web Responsive', 'Aplicaciones Web Progresivas', 'E-commerce Funcionales', 'Optimización SEO', 'Integración de APIs'])">
+                <div class="service-icon">💻</div>
+                <h3>Desarrollo Web</h3>
+                <p class="service-description">Creación de sitios web y aplicaciones modernas, responsive y orientadas a conversión.</p>
+            </div>
+
+            <!-- Diseño Gráfico -->
+            <div class="service-card" onclick="openServiceModal('Diseño Gráfico', 'Diseño visual profesional y creativo para marca, web e impresión. Creamos identidades corporativas únicas que comunican tus valores y atrapan la atención de tu audiencia.', ['Identidad Corporativa', 'Diseño de Logo Único', 'Diseño Web UI/UX', 'Materiales Impresos', 'Branding Estratégico'])">
+                <div class="service-icon">🎨</div>
+                <h3>Diseño Gráfico</h3>
+                <p class="service-description">Diseño visual profesional para marca, web e impresión con identidad corporativa única.</p>
+            </div>
+
+            <!-- Consultoría Digital -->
+            <div class="service-card" onclick="openServiceModal('Consultoría Digital', 'Asesoría especializada para transformación digital y estrategia tecnológica empresarial. Te guiamos en el camino hacia la modernización, productividad y competitividad en el entorno digital.', ['Auditoría Tecnológica', 'Estrategia Digital', 'Selección de Herramientas', 'Implementación Integral', 'Capacitación de Equipos'])">
+                <div class="service-icon">🚀</div>
+                <h3>Consultoría Digital</h3>
+                <p class="service-description">Asesoría para transformación digital y estrategia tecnológica empresarial.</p>
+            </div>
+
+            <!-- Mantenimiento -->
+            <div class="service-card" onclick="openServiceModal('Mantenimiento', 'Soporte continuo y mantenimiento preventivo para tu plataforma digital y sistemas. Monitoreamos 24/7 para garantizar máxima disponibilidad, seguridad y rendimiento.', ['Monitoreo 24/7', 'Actualizaciones Regulares', 'Backup Automático', 'Soporte Técnico', 'Parches de Seguridad'])">
+                <div class="service-icon">🔧</div>
+                <h3>Mantenimiento</h3>
+                <p class="service-description">Soporte continuo y mantenimiento preventivo para plataforma digital y sistemas.</p>
             </div>
         </div>
     </section>
@@ -506,5 +664,36 @@
             <p>&copy; 2026 NP Creative. Todos los derechos reservados.</p>
         </div>
     </footer>
+    
+    <script>
+        // Modal de Servicios
+        function openServiceModal(title, description, features) {
+            const modal = document.getElementById('serviceModal');
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            
+            const featuresList = document.getElementById('modalFeatures');
+            featuresList.innerHTML = '';
+            features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = '✓ ' + feature;
+                featuresList.appendChild(li);
+            });
+            
+            modal.style.display = 'block';
+        }
+        
+        function closeServiceModal() {
+            document.getElementById('serviceModal').style.display = 'none';
+        }
+        
+        // Cerrar modal al hacer clic fuera del contenido
+        window.onclick = function(event) {
+            const modal = document.getElementById('serviceModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
