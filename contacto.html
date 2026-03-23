@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - NP Creative</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Minimalista -->
+    <header>
+        <div class="logo">NP.</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#ideas">Ideas</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>¡Ponte en<br>Contacto!</h1>
+            <p>Estoy listo para ayudarte con tu próximo proyecto digital</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title center">Informacion de <span>Contacto</span></h2>
+            
+            <div class="contact-grid">
+                <!-- Formulario -->
+                <form class="contact-form" action="https://formspree.io/f/xyzabc" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                </form>
+
+                <!-- Información de contacto -->
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h3>📞 Teléfono</h3>
+                        <p>
+                            <a href="tel:+56928555617">+56 9 2855 5617</a>
+                        </p>
+                        <p style="color: #a0a0a0; font-size: 0.9rem; margin-top: 10px;">
+                            Disponible de lunes a viernes<br>
+                            de 9:00 a 18:00 horas
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>📧 Email</h3>
+                        <p>
+                            <a href="mailto:npardo@tricot.cl">npardo@tricot.cl</a>
+                        </p>
+                        <p style="color: #a0a0a0; font-size: 0.9rem; margin-top: 10px;">
+                            Respondo en menos de 24 horas
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>💼 Servicios</h3>
+                        <p>
+                            Desarrollo Web<br>
+                            Diseño Gráfico<br>
+                            Consultoría Digital<br>
+                            Mantenimiento y Soporte
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>🌐 Redes Sociales</h3>
+                        <p>
+                            <a href="#">LinkedIn</a><br>
+                            <a href="#">GitHub</a><br>
+                            <a href="#">Twitter/X</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>¡Volvamos a conectar!</h2>
+        <p>Tu proyecto está a solo un mensaje de distancia</p>
+    </section>
+
+    <!-- Footer Moderno -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <a href="index.html">Home</a>
+                <a href="index.html#ideas">Ideas</a>
+                <a href="index.html#features">Features</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto Directo</h4>
+                <a href="tel:+56928555617">+56 9 2855 5617</a>
+                <a href="mailto:npardo@tricot.cl">npardo@tricot.cl</a>
+            </div>
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <a href="#">Desarrollo Web</a>
+                <a href="#">Diseño Gráfico</a>
+                <a href="#">Consultoría</a>
+                <a href="#">Mantenimiento</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NP Creative. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
