@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a mi página</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #0f0f0f;
+            overflow-x: hidden;
+        }
+
+        /* Header Minimalista */
+        header {
+            background: transparent;
+            padding: 20px 40px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 900;
+            color: #00ff88;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00ff88;
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: #00ff88;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section Audaz */
+        .hero {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
+            color: white;
+            padding: 180px 40px 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: 5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 100, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 25s infinite ease-in-out 2s;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            background: linear-gradient(45deg, #00ff88, #00d4ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            animation: fadeInScale 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #b0b0b0;
+            font-weight: 300;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+            color: #0f0f0f;
+            padding: 16px 45px;
+            border: none;
+            border-radius: 0;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Ideas Section */
+        .ideas-section {
+            padding: 100px 40px;
+            background: #0f0f0f;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: left;
+            font-size: 3.5rem;
+            margin-bottom: 70px;
+            color: white;
+            font-weight: 900;
+            max-width: 600px;
+        }
+
+        .section-title span {
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ideas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .idea-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 40px;
+            border: 1px solid #00ff88;
+            border-radius: 0;
+            transition: all 0.3s;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .idea-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .idea-card:hover {
+            transform: translateY(-8px);
+            border-color: #00d4ff;
+            box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+        }
+
+        .idea-card:hover::before {
+            left: 100%;
+        }
+
+        .idea-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .idea-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #00ff88;
+            font-weight: 700;
+        }
+
+        .idea-card p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .features-content h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: white;
+            line-height: 1.1;
+        }
+
+        .features-content h2 span {
+            background: linear-gradient(45deg, #ff00ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 20px 0;
+            color: #b0b0b0;
+            font-size: 1.05rem;
+            border-bottom: 1px solid #00ff8822;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .features-list li::before {
+            content: '→';
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .features-visual {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+            border: 2px solid #00ff88;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00ff88;
+            font-family: 'Space Mono', monospace;
+            font-size: 2rem;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(90deg, #00ff88 0%, #00d4ff 50%, #ff00ff 100%);
+            color: #0f0f0f;
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: #606060;
+            padding: 50px 40px;
+            border-top: 1px solid #00ff8844;
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: #00ff88;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .footer-col a {
+            color: #606060;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: #00ff88;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #00ff8844;
+            grid-column: 1 / -1;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(30px) translateX(20px); }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 20px;
+            }
+
+            .hero {
+                padding: 120px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .ideas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-section {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Minimalista -->
+    <header>
+        <div class="logo">NP.</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Home</a></li>
+                <li><a href="#ideas">Ideas</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contacto">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Impactante -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>¡Bienvenido<br>a mi página!</h1>
+            <p>Diseño audaz, ideas innovadoras y tecnología de vanguardia</p>
+            <button class="btn-primary">Explorar Ahora</button>
+        </div>
+    </section>
+
+    <!-- Ideas Destacadas -->
+    <section class="ideas-section" id="ideas">
+        <div class="container">
+            <h2 class="section-title">Mis <span>Ideas</span></h2>
+            <div class="ideas-grid">
+                <div class="idea-card">
+                    <div class="idea-icon">💡</div>
+                    <h3>Innovación Radical</h3>
+                    <p>Transformamos conceptos en soluciones impactantes. Cada proyecto es una oportunidad para reinventar.</p>
+                </div>
+                <div class="idea-card">
+                    <div class="idea-icon">⚡</div>
+                    <h3>Velocidad Extrema</h3>
+                    <p>Performance optimizado al máximo. Carga ultrarrápida y experiencia de usuario fluida.</p>
+                </div>
+                <div class="idea-card">
+                    <div class="idea-icon">🎨</div>
+                    <h3>Diseño de Élite</h3>
+                    <p>Interfaces visuales que cautivan. Estética moderna con funcionalidad impecable.</p>
+                </div>
+                <div class="idea-card">
+                    <div class="idea-icon">🚀</div>
+                    <h3>Escalabilidad Total</h3>
+                    <p>Soluciones que crecen con tu negocio. Arquitectura preparada para el futuro.</p>
+                </div>
+                <div class="idea-card">
+                    <div class="idea-icon">🔐</div>
+                    <h3>Seguridad Blindada</h3>
+                    <p>Protección máxima de datos. Cumplimiento total de estándares de seguridad internacionales.</p>
+                </div>
+                <div class="idea-card">
+                    <div class="idea-icon">🌐</div>
+                    <h3>Presencia Digital</h3>
+                    <p>Domina el online. Estrategia integral para tu visibilidad en el mundo digital.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Avanzadas -->
+    <section class="features-section" id="features">
+        <div class="features-content">
+            <h2>Características <span>Exclusive</span></h2>
+            <ul class="features-list">
+                <li>Diseño Responsive 100% Adaptativo</li>
+                <li>Optimización SEO Ultra Avanzada</li>
+                <li>Velocidad de Carga en Milisegundos</li>
+                <li>Experiencia de Usuario Premium</li>
+                <li>Integración con APIs Modernas</li>
+                <li>Soporte 24/7 Especializado</li>
+            </ul>
+        </div>
+        <div class="features-visual">
+            &lt; Codigo de<br>Excelencia /&gt;
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section" id="contacto">
+        <h2>Tu proyecto merece excelencia</h2>
+        <p>Transformemos tus ideas en realidad digital</p>
+        <button class="btn-primary">Contáctame Ahora</button>
+    </section>
+
+    <!-- Footer Moderno -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <a href="#inicio">Home</a>
+                <a href="#ideas">Ideas</a>
+                <a href="#features">Features</a>
+                <a href="#contacto">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <a href="mailto:hola@mipagina.com">Email</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+                <a href="#">Twitter</a>
+            </div>
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <a href="#">Desarrollo Web</a>
+                <a href="#">Diseño Gráfico</a>
+                <a href="#">Consultoría</a>
+                <a href="#">Mantenimiento</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NP Creative. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
